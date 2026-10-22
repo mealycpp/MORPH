@@ -1,0 +1,99 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+actions
+(
+    {
+        name    disk1Set;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+            p1      (0.112430 0.271430 -0.01);
+            p2      (0.112430 0.271430  0.01);
+            radius  0.035000;
+        }
+    }
+    {
+        name    disk1Zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set     disk1Set;
+        }
+    }
+    {
+        name    disk2Set;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+            p1      (-0.112430 0.271430 -0.01);
+            p2      (-0.112430 0.271430  0.01);
+            radius  0.035000;
+        }
+    }
+    {
+        name    disk2Zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set     disk2Set;
+        }
+    }
+    {
+        name    disk3Set;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+            p1      (-0.112430 -0.271430 -0.01);
+            p2      (-0.112430 -0.271430  0.01);
+            radius  0.035000;
+        }
+    }
+    {
+        name    disk3Zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set     disk3Set;
+        }
+    }
+    {
+        name    disk4Set;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+            p1      (0.112430 -0.271430 -0.01);
+            p2      (0.112430 -0.271430  0.01);
+            radius  0.035000;
+        }
+    }
+    {
+        name    disk4Zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set     disk4Set;
+        }
+    }
+);

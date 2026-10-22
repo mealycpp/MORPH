@@ -1,0 +1,100 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      sampleDict;
+}
+
+type            sets;
+libs            (sampling);
+writeControl    writeTime;
+
+interpolationScheme cellPoint;
+setFormat       raw;
+
+fields          (U p);
+
+sets
+(
+        line_FR_FL
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (0.112430 0.271430 -0.1);
+            end     (-0.112430 0.271430 -0.1);
+            nPoints 100;
+        }
+        line_FR_RL
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (0.112430 0.271430 -0.1);
+            end     (-0.112430 -0.271430 -0.1);
+            nPoints 100;
+        }
+        line_FR_RR
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (0.112430 0.271430 -0.1);
+            end     (0.112430 -0.271430 -0.1);
+            nPoints 100;
+        }
+        line_FL_RL
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (-0.112430 0.271430 -0.1);
+            end     (-0.112430 -0.271430 -0.1);
+            nPoints 100;
+        }
+        line_FL_RR
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (-0.112430 0.271430 -0.1);
+            end     (0.112430 -0.271430 -0.1);
+            nPoints 100;
+        }
+        line_RL_RR
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (-0.112430 -0.271430 -0.1);
+            end     (0.112430 -0.271430 -0.1);
+            nPoints 100;
+        }
+        downwash_FR
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (0.112430 0.271430  0.3);
+            end     (0.112430 0.271430 -0.6);
+            nPoints 100;
+        }
+        downwash_FL
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (-0.112430 0.271430  0.3);
+            end     (-0.112430 0.271430 -0.6);
+            nPoints 100;
+        }
+        downwash_RL
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (-0.112430 -0.271430  0.3);
+            end     (-0.112430 -0.271430 -0.6);
+            nPoints 100;
+        }
+        downwash_RR
+        {
+            type    lineUniform;
+            axis    distance;
+            start   (0.112430 -0.271430  0.3);
+            end     (0.112430 -0.271430 -0.6);
+            nPoints 100;
+        }
+);

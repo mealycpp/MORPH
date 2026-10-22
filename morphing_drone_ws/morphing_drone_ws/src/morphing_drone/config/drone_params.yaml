@@ -1,0 +1,83 @@
+# ============================================================
+# Morphing Drone Physical Parameters
+# Source: Detailed Design document (Mohamed El-Hadedy, CPP)
+# Motor: D2842-2800KV on 4S LiPo, 70mm EDF
+# ============================================================
+
+drone:
+  # --- Mass properties ---
+  total_mass_kg: 2.5            # Estimated total mass (frame + electronics + battery)
+  frame_mass_kg: 0.4            # Carbon fiber frame
+  battery_mass_kg: 0.5          # 4S 3500mAh LiPo
+  edf_mass_kg: 0.15             # Per EDF unit (x4)
+  servo_mass_kg: 0.08           # Per 35KG servo (x4)
+
+  # --- Frame geometry (from design doc) ---
+  center_plate_length_mm: 150
+  center_plate_width_mm: 150
+  center_plate_thickness_mm: 2.5
+  arm_length_mm: 318            # Center frame edge to EDF center
+  arm_width_mm: 50
+  arm_thickness_mm: 2.5
+  servo_position_mm: 159        # From center frame, = arm midpoint
+  edf_diameter_mm: 70
+
+  # --- Inertia estimates (kg·m²) for X-config ---
+  # Computed assuming thin rod arms + central plate
+  ixx: 0.025
+  iyy: 0.025
+  izz: 0.045
+
+  # --- EDF thrust model (70mm, D2842-2800KV, 4S) ---
+  edf:
+    max_thrust_N: 17.86         # ~1.82 kg per EDF at 4S
+    max_current_A: 65.0
+    voltage_V: 14.8             # 4S nominal
+    max_power_W: 962.0          # Per EDF
+    thrust_coefficient: 1.2e-5  # Simplified: T = k * omega^2
+    torque_coefficient: 2.0e-7  # Reaction torque: Q = b * omega^2
+    max_rpm: 42000
+    response_time_s: 0.15       # Time constant for thrust changes
+
+  # --- Servo specs (35KG coreless) ---
+  servo:
+    max_torque_Nm: 35.0         # 35 kg·cm ≈ 3.43 N·m
+    max_speed_deg_per_sec: 300  # ~0.1s per 60°
+    position_accuracy_deg: 0.5
+
+# --- Morphing configurations ---
+# Angles are the servo joint angle (degrees) at each arm's midpoint
+# relative to the arm's nominal straight-out direction.
+# Arms are numbered 1-4 starting front-right, going CCW.
+configurations:
+  X:
+    description: "Standard X quadcopter — arms at 45° diagonals"
+    arm_angles_deg: [0.0, 0.0, 0.0, 0.0]
+    base_arm_headings_deg: [45, 135, 225, 315]
+    expected_stability: "high"
+
+  O:
+    description: "Circular/compact — all arms sweep +90°"
+    arm_angles_deg: [90.0, 90.0, 90.0, 90.0]
+    base_arm_headings_deg: [45, 135, 225, 315]
+    expected_stability: "medium — reduced moment arms"
+
+  T:
+    description: "T-shape — front pair spreads, rear stays in X position"
+    arm_angles_deg: [-45.0, 45.0, 0.0, 0.0]
+    base_arm_headings_deg: [45, 135, 225, 315]
+    expected_stability: "medium — low CG shift, reduced pitch authority"
+
+  H:
+    description: "H-shape — front pair forward, rear pair backward"
+    arm_angles_deg: [45.0, -45.0, 45.0, -45.0]
+    base_arm_headings_deg: [45, 135, 225, 315]
+    expected_stability: "medium-high"
+
+# --- Simulation parameters ---
+simulation:
+  hover_duration_per_config_s: 30.0
+  morph_transition_time_s: 3.0
+  target_altitude_m: 5.0
+  data_log_rate_hz: 50.0
+  gravity: 9.81

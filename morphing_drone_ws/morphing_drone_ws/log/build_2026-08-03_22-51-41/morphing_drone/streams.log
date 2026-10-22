@@ -1,0 +1,44 @@
+[8.162s] Invoking command in '/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone': PYTHONPATH=/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/build --no-deps symlink_data
+[11.997s] running develop
+[12.717s] running egg_info
+[12.719s] creating morphing_drone.egg-info
+[12.721s] writing morphing_drone.egg-info/PKG-INFO
+[12.739s] writing dependency_links to morphing_drone.egg-info/dependency_links.txt
+[12.747s] writing entry points to morphing_drone.egg-info/entry_points.txt
+[12.758s] writing requirements to morphing_drone.egg-info/requires.txt
+[12.764s] writing top-level names to morphing_drone.egg-info/top_level.txt
+[12.775s] writing manifest file 'morphing_drone.egg-info/SOURCES.txt'
+[13.198s] reading manifest file 'morphing_drone.egg-info/SOURCES.txt'
+[13.538s] writing manifest file 'morphing_drone.egg-info/SOURCES.txt'
+[13.901s] running build_ext
+[13.916s] Creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages/morphing-drone.egg-link (link to .)
+[13.944s] Installing analyze_flight_data script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[13.975s] Installing data_logger script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.019s] Installing flight_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.075s] Installing gazebo_drone_bridge script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.116s] Installing morph_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.145s] Installing rl_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.188s] Installing run_morph_sequence script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.235s] Installing run_obstacle_course script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.286s] Installing teleop_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+[14.344s] 
+[14.346s] Installed /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone
+[14.353s] running symlink_data
+[14.369s] creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index
+[14.375s] creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index
+[14.384s] creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index/packages
+[14.431s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/resource/morphing_drone -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index/packages
+[14.479s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/package.xml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone
+[14.505s] creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+[14.547s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/full_simulation.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+[14.591s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/obstacle_course.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+[14.635s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/teleop_simulation.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+[14.681s] creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config
+[14.721s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/config/drone_params.yaml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config
+[14.763s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/config/pid_gains.yaml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config
+[14.799s] creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/urdf
+[14.826s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/urdf/morphing_drone.urdf.xacro -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/urdf
+[14.847s] creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds
+[14.884s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/worlds/empty_flight.world -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds
+[14.935s] symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/worlds/morph_course.world -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds
+[14.993s] Invoked command in '/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone' returned '0': PYTHONPATH=/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/build --no-deps symlink_data

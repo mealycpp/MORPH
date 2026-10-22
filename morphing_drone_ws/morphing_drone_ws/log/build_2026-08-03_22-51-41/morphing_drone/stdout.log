@@ -1,0 +1,42 @@
+running develop
+running egg_info
+creating morphing_drone.egg-info
+writing morphing_drone.egg-info/PKG-INFO
+writing dependency_links to morphing_drone.egg-info/dependency_links.txt
+writing entry points to morphing_drone.egg-info/entry_points.txt
+writing requirements to morphing_drone.egg-info/requires.txt
+writing top-level names to morphing_drone.egg-info/top_level.txt
+writing manifest file 'morphing_drone.egg-info/SOURCES.txt'
+reading manifest file 'morphing_drone.egg-info/SOURCES.txt'
+writing manifest file 'morphing_drone.egg-info/SOURCES.txt'
+running build_ext
+Creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages/morphing-drone.egg-link (link to .)
+Installing analyze_flight_data script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing data_logger script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing flight_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing gazebo_drone_bridge script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing morph_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing rl_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing run_morph_sequence script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing run_obstacle_course script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+Installing teleop_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone
+
+Installed /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone
+running symlink_data
+creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index
+creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index
+creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index/packages
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/resource/morphing_drone -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index/packages
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/package.xml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone
+creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/full_simulation.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/obstacle_course.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/teleop_simulation.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch
+creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/config/drone_params.yaml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/config/pid_gains.yaml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config
+creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/urdf
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/urdf/morphing_drone.urdf.xacro -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/urdf
+creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/worlds/empty_flight.world -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds
+symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/worlds/morph_course.world -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds

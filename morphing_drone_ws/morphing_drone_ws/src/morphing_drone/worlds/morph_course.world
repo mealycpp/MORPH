@@ -1,0 +1,291 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="morph_course_world">
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>100</iters>
+        </solver>
+      </ode>
+    </physics>
+
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros><namespace>/</namespace></ros>
+      <update_rate>100.0</update_rate>
+    </plugin>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         OBSTACLE COURSE — 5 zones demonstrating each morph configuration
+         Takeoff pad at (0,0), course extends along +X direction
+         ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Takeoff pad marker (BLUE square on ground at origin) — visual only, no collision -->
+    <model name="takeoff_pad">
+      <static>true</static>
+      <pose>0 0 0.005 0 0 0</pose>
+      <link name="pad">
+        <visual name="v">
+          <geometry><box><size>1.5 1.5 0.01</size></box></geometry>
+          <material><ambient>0.2 0.4 1.0 1</ambient><diffuse>0.2 0.4 1.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ═══ ZONE 1 — X-CONFIG OPEN WAYPOINT RUN ═══
+         4 pylons at varying heights in a 15×15m area -->
+    <model name="pylon_1">
+      <static>true</static>
+      <pose>5 -3 1.5 0 0 0</pose>
+      <link name="p">
+        <visual name="v">
+          <geometry><cylinder><radius>0.15</radius><length>3.0</length></cylinder></geometry>
+          <material><ambient>0.2 0.4 1.0 1</ambient><diffuse>0.2 0.4 1.0 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><cylinder><radius>0.15</radius><length>3.0</length></cylinder></geometry>
+        </collision>
+      </link>
+    </model>
+    <model name="pylon_2">
+      <static>true</static>
+      <pose>8 3 2.0 0 0 0</pose>
+      <link name="p">
+        <visual name="v">
+          <geometry><cylinder><radius>0.15</radius><length>4.0</length></cylinder></geometry>
+          <material><ambient>0.2 0.4 1.0 1</ambient><diffuse>0.2 0.4 1.0 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><cylinder><radius>0.15</radius><length>4.0</length></cylinder></geometry>
+        </collision>
+      </link>
+    </model>
+    <model name="pylon_3">
+      <static>true</static>
+      <pose>12 -2 1.75 0 0 0</pose>
+      <link name="p">
+        <visual name="v">
+          <geometry><cylinder><radius>0.15</radius><length>3.5</length></cylinder></geometry>
+          <material><ambient>0.2 0.4 1.0 1</ambient><diffuse>0.2 0.4 1.0 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><cylinder><radius>0.15</radius><length>3.5</length></cylinder></geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ═══ ZONE 2 — O-CONFIG TUNNEL (GREEN) ═══
+         Narrow round tunnel: 4m long, 0.7m wide passage
+         X-config bounding (~0.64m wide) barely fits, O-config (~0.32m) clears easily -->
+    <model name="tunnel_wall_left">
+      <static>true</static>
+      <pose>17.5 -0.5 3.0 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>4.0 0.1 3.0</size></box></geometry>
+          <material><ambient>0.2 0.8 0.3 1</ambient><diffuse>0.2 0.8 0.3 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><box><size>4.0 0.1 3.0</size></box></geometry>
+        </collision>
+      </link>
+    </model>
+    <model name="tunnel_wall_right">
+      <static>true</static>
+      <pose>17.5 0.5 3.0 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>4.0 0.1 3.0</size></box></geometry>
+          <material><ambient>0.2 0.8 0.3 1</ambient><diffuse>0.2 0.8 0.3 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><box><size>4.0 0.1 3.0</size></box></geometry>
+        </collision>
+      </link>
+    </model>
+    <model name="tunnel_ceiling">
+      <static>true</static>
+      <pose>17.5 0 4.55 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>4.0 1.2 0.1</size></box></geometry>
+          <material><ambient>0.2 0.8 0.3 1</ambient><diffuse>0.2 0.8 0.3 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><box><size>4.0 1.2 0.1</size></box></geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ═══ ZONE 3 — Y-CONFIG SLALOM (YELLOW) ═══
+         4 gates in a line, 3m apart, forcing forward cruise -->
+    <model name="gate_1_left">
+      <static>true</static>
+      <pose>23 -1.5 1.5 0 0 0</pose>
+      <link name="p">
+        <visual name="v"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry>
+          <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual>
+        <collision name="c"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry></collision>
+      </link>
+    </model>
+    <model name="gate_1_right">
+      <static>true</static>
+      <pose>23 1.5 1.5 0 0 0</pose>
+      <link name="p">
+        <visual name="v"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry>
+          <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual>
+        <collision name="c"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry></collision>
+      </link>
+    </model>
+    <model name="gate_1_top">
+      <static>true</static>
+      <pose>23 0 3.05 0 0 0</pose>
+      <link name="b">
+        <visual name="v"><geometry><box><size>0.1 3.1 0.1</size></box></geometry>
+          <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="gate_2_left">
+      <static>true</static>
+      <pose>26 -1.5 1.5 0 0 0</pose>
+      <link name="p"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry>
+        <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual>
+        <collision name="c"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry></collision></link>
+    </model>
+    <model name="gate_2_right">
+      <static>true</static>
+      <pose>26 1.5 1.5 0 0 0</pose>
+      <link name="p"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry>
+        <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual>
+        <collision name="c"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry></collision></link>
+    </model>
+    <model name="gate_2_top">
+      <static>true</static>
+      <pose>26 0 3.05 0 0 0</pose>
+      <link name="b"><visual name="v"><geometry><box><size>0.1 3.1 0.1</size></box></geometry>
+        <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="gate_3_left">
+      <static>true</static>
+      <pose>29 -1.5 1.5 0 0 0</pose>
+      <link name="p"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry>
+        <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual>
+        <collision name="c"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry></collision></link>
+    </model>
+    <model name="gate_3_right">
+      <static>true</static>
+      <pose>29 1.5 1.5 0 0 0</pose>
+      <link name="p"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry>
+        <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual>
+        <collision name="c"><geometry><cylinder><radius>0.08</radius><length>3.0</length></cylinder></geometry></collision></link>
+    </model>
+    <model name="gate_3_top">
+      <static>true</static>
+      <pose>29 0 3.05 0 0 0</pose>
+      <link name="b"><visual name="v"><geometry><box><size>0.1 3.1 0.1</size></box></geometry>
+        <material><ambient>1.0 0.8 0.1 1</ambient><diffuse>1.0 0.8 0.1 1</diffuse></material></visual></link>
+    </model>
+
+    <!-- ═══ ZONE 4 — T-CONFIG WALL INSPECTION (RED) ═══
+         Vertical wall with colored target patch for sensor approach -->
+    <model name="inspection_wall">
+      <static>true</static>
+      <pose>35 0 2.0 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>0.1 4.0 4.0</size></box></geometry>
+          <material><ambient>0.6 0.6 0.6 1</ambient><diffuse>0.6 0.6 0.6 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><box><size>0.1 4.0 4.0</size></box></geometry>
+        </collision>
+      </link>
+    </model>
+    <!-- Target patch on the wall -->
+    <model name="inspection_target">
+      <static>true</static>
+      <pose>34.93 0 2.0 0 0 0</pose>
+      <link name="t">
+        <visual name="v">
+          <geometry><box><size>0.02 0.6 0.6</size></box></geometry>
+          <material><ambient>1.0 0.2 0.2 1</ambient><diffuse>1.0 0.2 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ═══ ZONE 5 — H-CONFIG NARROW SLOT + LANDING PAD (PURPLE) ═══
+         Tall narrow vertical slot (0.35m wide × 1.2m tall) forces H's narrow-axis orientation
+         Behind the slot: raised landing pad -->
+    <model name="slot_wall_left">
+      <static>true</static>
+      <pose>42 -1.5 2.0 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>0.2 2.825 4.0</size></box></geometry>
+          <material><ambient>0.65 0.4 0.9 1</ambient><diffuse>0.65 0.4 0.9 1</diffuse></material>
+        </visual>
+        <collision name="c"><geometry><box><size>0.2 2.825 4.0</size></box></geometry></collision>
+      </link>
+    </model>
+    <model name="slot_wall_right">
+      <static>true</static>
+      <pose>42 1.5 2.0 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>0.2 2.825 4.0</size></box></geometry>
+          <material><ambient>0.65 0.4 0.9 1</ambient><diffuse>0.65 0.4 0.9 1</diffuse></material>
+        </visual>
+        <collision name="c"><geometry><box><size>0.2 2.825 4.0</size></box></geometry></collision>
+      </link>
+    </model>
+    <!-- Top beam of the slot (closes the top) -->
+    <model name="slot_top_beam">
+      <static>true</static>
+      <pose>42 0 3.6 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>0.2 0.35 0.8</size></box></geometry>
+          <material><ambient>0.65 0.4 0.9 1</ambient><diffuse>0.65 0.4 0.9 1</diffuse></material>
+        </visual>
+        <collision name="c"><geometry><box><size>0.2 0.35 0.8</size></box></geometry></collision>
+      </link>
+    </model>
+    <!-- Bottom beam of the slot (closes the bottom — forces slot entry height) -->
+    <model name="slot_bottom_beam">
+      <static>true</static>
+      <pose>42 0 1.2 0 0 0</pose>
+      <link name="w">
+        <visual name="v">
+          <geometry><box><size>0.2 0.35 2.4</size></box></geometry>
+          <material><ambient>0.65 0.4 0.9 1</ambient><diffuse>0.65 0.4 0.9 1</diffuse></material>
+        </visual>
+        <collision name="c"><geometry><box><size>0.2 0.35 2.4</size></box></geometry></collision>
+      </link>
+    </model>
+
+    <!-- Landing pad behind the slot -->
+    <model name="landing_pad">
+      <static>true</static>
+      <pose>46 0 0.1 0 0 0</pose>
+      <link name="p">
+        <visual name="v">
+          <geometry><cylinder><radius>0.8</radius><length>0.2</length></cylinder></geometry>
+          <material><ambient>0.8 0.3 1.0 1</ambient><diffuse>0.8 0.3 1.0 1</diffuse></material>
+        </visual>
+        <collision name="c">
+          <geometry><cylinder><radius>0.8</radius><length>0.2</length></cylinder></geometry>
+        </collision>
+      </link>
+    </model>
+
+  </world>
+</sdf>

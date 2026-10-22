@@ -1,0 +1,207 @@
+[0.000000] (-) TimerEvent: {}
+[0.000734] (morphing_drone) JobQueued: {'identifier': 'morphing_drone', 'dependencies': OrderedDict()}
+[0.001324] (morphing_drone) JobStarted: {'identifier': 'morphing_drone'}
+[0.097962] (-) TimerEvent: {}
+[0.199199] (-) TimerEvent: {}
+[0.301122] (-) TimerEvent: {}
+[0.401863] (-) TimerEvent: {}
+[0.503783] (-) TimerEvent: {}
+[0.605777] (-) TimerEvent: {}
+[0.707140] (-) TimerEvent: {}
+[0.808654] (-) TimerEvent: {}
+[0.909439] (-) TimerEvent: {}
+[1.010770] (-) TimerEvent: {}
+[1.112734] (-) TimerEvent: {}
+[1.214449] (-) TimerEvent: {}
+[1.316530] (-) TimerEvent: {}
+[1.417912] (-) TimerEvent: {}
+[1.519557] (-) TimerEvent: {}
+[1.621246] (-) TimerEvent: {}
+[1.722595] (-) TimerEvent: {}
+[1.824168] (-) TimerEvent: {}
+[1.936162] (-) TimerEvent: {}
+[2.037424] (-) TimerEvent: {}
+[2.139136] (-) TimerEvent: {}
+[2.240726] (-) TimerEvent: {}
+[2.342522] (-) TimerEvent: {}
+[2.443890] (-) TimerEvent: {}
+[2.545735] (-) TimerEvent: {}
+[2.646639] (-) TimerEvent: {}
+[2.748341] (-) TimerEvent: {}
+[2.850145] (-) TimerEvent: {}
+[2.951539] (-) TimerEvent: {}
+[3.053378] (-) TimerEvent: {}
+[3.155204] (-) TimerEvent: {}
+[3.257053] (-) TimerEvent: {}
+[3.358508] (-) TimerEvent: {}
+[3.460318] (-) TimerEvent: {}
+[3.562086] (-) TimerEvent: {}
+[3.663124] (-) TimerEvent: {}
+[3.765028] (-) TimerEvent: {}
+[3.867157] (-) TimerEvent: {}
+[3.968657] (-) TimerEvent: {}
+[4.072009] (-) TimerEvent: {}
+[4.172987] (-) TimerEvent: {}
+[4.274289] (-) TimerEvent: {}
+[4.376052] (-) TimerEvent: {}
+[4.477532] (-) TimerEvent: {}
+[4.579154] (-) TimerEvent: {}
+[4.680820] (-) TimerEvent: {}
+[4.782776] (-) TimerEvent: {}
+[4.885359] (-) TimerEvent: {}
+[4.987140] (-) TimerEvent: {}
+[5.088909] (-) TimerEvent: {}
+[5.190055] (-) TimerEvent: {}
+[5.291740] (-) TimerEvent: {}
+[5.394030] (-) TimerEvent: {}
+[5.495784] (-) TimerEvent: {}
+[5.597812] (-) TimerEvent: {}
+[5.699027] (-) TimerEvent: {}
+[5.800695] (-) TimerEvent: {}
+[5.902625] (-) TimerEvent: {}
+[6.004590] (-) TimerEvent: {}
+[6.106087] (-) TimerEvent: {}
+[6.207575] (-) TimerEvent: {}
+[6.308532] (-) TimerEvent: {}
+[6.410225] (-) TimerEvent: {}
+[6.512063] (-) TimerEvent: {}
+[6.613824] (-) TimerEvent: {}
+[6.715235] (-) TimerEvent: {}
+[6.817156] (-) TimerEvent: {}
+[6.918568] (-) TimerEvent: {}
+[7.020292] (-) TimerEvent: {}
+[7.122643] (-) TimerEvent: {}
+[7.224067] (-) TimerEvent: {}
+[7.325449] (-) TimerEvent: {}
+[7.426492] (-) TimerEvent: {}
+[7.528454] (-) TimerEvent: {}
+[7.630419] (-) TimerEvent: {}
+[7.731941] (-) TimerEvent: {}
+[7.834128] (-) TimerEvent: {}
+[7.935078] (-) TimerEvent: {}
+[8.036365] (-) TimerEvent: {}
+[8.124792] (morphing_drone) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/build', '--no-deps', 'symlink_data'], 'cwd': '/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'BOOST_ARCH_PATH': '/usr/lib/openfoam/openfoam2406/ThirdParty/platforms/linux64Gcc/boost-system', 'WM_PROJECT': 'OpenFOAM', 'FOAM_SITE_LIBBIN': '/usr/lib/openfoam/openfoam2406/site/2406/platforms/linux64GccDPInt32Opt/lib', 'USER': 'jared', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jared/OpenFOAM/jared-v2406/platforms/linux64GccDPInt32Opt/lib:/usr/lib/openfoam/openfoam2406/site/2406/platforms/linux64GccDPInt32Opt/lib:/usr/lib/openfoam/openfoam2406/platforms/linux64GccDPInt32Opt/lib/sys-openmpi:/usr/lib/openfoam/openfoam2406/platforms/linux64GccDPInt32Opt/lib:/usr/lib/x86_64-linux-gnu/openmpi/lib:/usr/lib/openfoam/openfoam2406/platforms/linux64GccDPInt32Opt/lib/dummy:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'WT_PROFILE_ID': '{c89f5ff5-830b-5c9b-81c5-3cdb8841d888}', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/jared', 'OLDPWD': '/mnt/c/morphing_drone_ws (6)', 'FOAM_API': '2406', 'WM_PROJECT_DIR': '/usr/lib/openfoam/openfoam2406', 'ROS_PYTHON_VERSION': '3', 'FOAM_ETC': '/usr/lib/openfoam/openfoam2406/etc', 'WM_COMPILE_OPTION': 'Opt', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-22.04', 'ADIOS2_ARCH_PATH': '/usr/lib/openfoam/openfoam2406/ThirdParty/platforms/linux64Gcc/ADIOS2-2.10.1', 'FOAM_SITE_APPBIN': '/usr/lib/openfoam/openfoam2406/site/2406/platforms/linux64GccDPInt32Opt/bin', 'FOAM_USER_LIBBIN': '/home/jared/OpenFOAM/jared-v2406/platforms/linux64GccDPInt32Opt/lib', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/mnt/c/morphing_drone_ws (5)/morphing_drone_ws/install:/mnt/c/morphing_drone_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'jared', 'FOAM_APP': '/usr/lib/openfoam/openfoam2406/applications', 'NAME': 'JJALaptop', 'WSL_INTEROP': '/run/WSL/33221_interop', 'MPI_ARCH_PATH': '/usr/lib/x86_64-linux-gnu/openmpi', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'WM_PRECISION_OPTION': 'DP', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'WM_COMPILER_TYPE': 'system', 'FOAM_MPI': 'sys-openmpi', 'WM_COMPILER_LIB_ARCH': '64', 'PATH': '/usr/lib/ccache:/home/jared/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/jared/.local/bin:/usr/lib/x86_64-linux-gnu/openmpi/bin:/home/jared/OpenFOAM/jared-v2406/platforms/linux64GccDPInt32Opt/bin:/usr/lib/openfoam/openfoam2406/site/2406/platforms/linux64GccDPInt32Opt/bin:/usr/lib/openfoam/openfoam2406/platforms/linux64GccDPInt32Opt/bin:/usr/lib/openfoam/openfoam2406/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/MATLAB/R2023b/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/:/mnt/c/Program Files/IVI Foundation/VISA/Win64/Bin/:/mnt/c/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin:/mnt/c/Program Files (x86)/PharosSystems/Core:/mnt/c/Program Files/nodejs/:/mnt/c/Users/jared/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/jared/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/jared/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/jared/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/jared/AppData/Roaming/npm:/snap/bin', 'CGAL_ARCH_PATH': '/usr/lib/openfoam/openfoam2406/ThirdParty/platforms/linux64Gcc/cgal-system', 'WT_SESSION': '66e3c94e-1cf8-4756-8cdb-df172d2643f8', 'FOAM_UTILITIES': '/usr/lib/openfoam/openfoam2406/applications/utilities', 'FOAM_SRC': '/usr/lib/openfoam/openfoam2406/src', 'SCOTCH_ARCH_PATH': '/usr/lib/openfoam/openfoam2406/ThirdParty/platforms/linux64GccDPInt32/scotch-system', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'FOAM_USER_APPBIN': '/home/jared/OpenFOAM/jared-v2406/platforms/linux64GccDPInt32Opt/bin', 'WM_OPTIONS': 'linux64GccDPInt32Opt', 'WM_PROJECT_VERSION': 'v2406', 'DISPLAY': ':0', 'FFTW_ARCH_PATH': '/usr/lib/openfoam/openfoam2406/ThirdParty/platforms/linux64Gcc/fftw-system', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'WM_ARCH': 'linux64', 'AMENT_PREFIX_PATH': '/mnt/c/morphing_drone_ws (5)/morphing_drone_ws/install/morphing_drone:/mnt/c/morphing_drone_ws/install/morphing_drone:/opt/ros/humble', 'SHELL': '/bin/bash', 'FOAM_LIBBIN': '/usr/lib/openfoam/openfoam2406/platforms/linux64GccDPInt32Opt/lib', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'WM_COMPILER': 'Gcc', 'WM_PROJECT_USER_DIR': '/home/jared/OpenFOAM/jared-v2406', 'PWD': '/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone', 'FOAM_TUTORIALS': '/usr/lib/openfoam/openfoam2406/tutorials', 'WM_MPLIB': 'SYSTEMOPENMPI', 'WM_LABEL_SIZE': '32', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'FOAM_RUN': '/home/jared/OpenFOAM/jared-v2406/run', 'WM_THIRD_PARTY_DIR': '/usr/lib/openfoam/openfoam2406/ThirdParty', 'PYTHONPATH': '/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages:/mnt/c/morphing_drone_ws (5)/morphing_drone_ws/build/morphing_drone:/mnt/c/morphing_drone_ws (5)/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages:/mnt/c/morphing_drone_ws/build/morphing_drone:/mnt/c/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'WM_LABEL_OPTION': 'Int32', 'FOAM_SOLVERS': '/usr/lib/openfoam/openfoam2406/applications/solvers', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'FOAM_APPBIN': '/usr/lib/openfoam/openfoam2406/platforms/linux64GccDPInt32Opt/bin', 'HOSTTYPE': 'x86_64', 'WSLENV': 'WT_SESSION:WT_PROFILE_ID:'}, 'shell': False}
+[8.166031] (-) TimerEvent: {}
+[8.267577] (-) TimerEvent: {}
+[8.369106] (-) TimerEvent: {}
+[8.470661] (-) TimerEvent: {}
+[8.572654] (-) TimerEvent: {}
+[8.674481] (-) TimerEvent: {}
+[8.776379] (-) TimerEvent: {}
+[8.877518] (-) TimerEvent: {}
+[8.979617] (-) TimerEvent: {}
+[9.081574] (-) TimerEvent: {}
+[9.183839] (-) TimerEvent: {}
+[9.285569] (-) TimerEvent: {}
+[9.386933] (-) TimerEvent: {}
+[9.489031] (-) TimerEvent: {}
+[9.590815] (-) TimerEvent: {}
+[9.692746] (-) TimerEvent: {}
+[9.794729] (-) TimerEvent: {}
+[9.896667] (-) TimerEvent: {}
+[9.997833] (-) TimerEvent: {}
+[10.099869] (-) TimerEvent: {}
+[10.201684] (-) TimerEvent: {}
+[10.302697] (-) TimerEvent: {}
+[10.404255] (-) TimerEvent: {}
+[10.505660] (-) TimerEvent: {}
+[10.606740] (-) TimerEvent: {}
+[10.707505] (-) TimerEvent: {}
+[10.808470] (-) TimerEvent: {}
+[10.909510] (-) TimerEvent: {}
+[11.010580] (-) TimerEvent: {}
+[11.111505] (-) TimerEvent: {}
+[11.212275] (-) TimerEvent: {}
+[11.312918] (-) TimerEvent: {}
+[11.414194] (-) TimerEvent: {}
+[11.514992] (-) TimerEvent: {}
+[11.616002] (-) TimerEvent: {}
+[11.716767] (-) TimerEvent: {}
+[11.817607] (-) TimerEvent: {}
+[11.918304] (-) TimerEvent: {}
+[11.996985] (morphing_drone) StdoutLine: {'line': b'running develop\n'}
+[12.018484] (-) TimerEvent: {}
+[12.119303] (-) TimerEvent: {}
+[12.220160] (-) TimerEvent: {}
+[12.321083] (-) TimerEvent: {}
+[12.422117] (-) TimerEvent: {}
+[12.522947] (-) TimerEvent: {}
+[12.623767] (-) TimerEvent: {}
+[12.717424] (morphing_drone) StdoutLine: {'line': b'running egg_info\n'}
+[12.719312] (morphing_drone) StdoutLine: {'line': b'creating morphing_drone.egg-info\n'}
+[12.721749] (morphing_drone) StdoutLine: {'line': b'writing morphing_drone.egg-info/PKG-INFO\n'}
+[12.723893] (-) TimerEvent: {}
+[12.738133] (morphing_drone) StdoutLine: {'line': b'writing dependency_links to morphing_drone.egg-info/dependency_links.txt\n'}
+[12.746230] (morphing_drone) StdoutLine: {'line': b'writing entry points to morphing_drone.egg-info/entry_points.txt\n'}
+[12.757009] (morphing_drone) StdoutLine: {'line': b'writing requirements to morphing_drone.egg-info/requires.txt\n'}
+[12.764414] (morphing_drone) StdoutLine: {'line': b'writing top-level names to morphing_drone.egg-info/top_level.txt\n'}
+[12.774820] (morphing_drone) StdoutLine: {'line': b"writing manifest file 'morphing_drone.egg-info/SOURCES.txt'\n"}
+[12.824022] (-) TimerEvent: {}
+[12.924807] (-) TimerEvent: {}
+[13.025621] (-) TimerEvent: {}
+[13.127078] (-) TimerEvent: {}
+[13.197001] (morphing_drone) StdoutLine: {'line': b"reading manifest file 'morphing_drone.egg-info/SOURCES.txt'\n"}
+[13.227179] (-) TimerEvent: {}
+[13.327948] (-) TimerEvent: {}
+[13.428742] (-) TimerEvent: {}
+[13.529486] (-) TimerEvent: {}
+[13.537354] (morphing_drone) StdoutLine: {'line': b"writing manifest file 'morphing_drone.egg-info/SOURCES.txt'\n"}
+[13.629659] (-) TimerEvent: {}
+[13.731498] (-) TimerEvent: {}
+[13.832334] (-) TimerEvent: {}
+[13.899830] (morphing_drone) StdoutLine: {'line': b'running build_ext\n'}
+[13.903773] (morphing_drone) StdoutLine: {'line': b'Creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/python3.10/site-packages/morphing-drone.egg-link (link to .)\n'}
+[13.932461] (-) TimerEvent: {}
+[13.943645] (morphing_drone) StdoutLine: {'line': b'Installing analyze_flight_data script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[13.974587] (morphing_drone) StdoutLine: {'line': b'Installing data_logger script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.019472] (morphing_drone) StdoutLine: {'line': b'Installing flight_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.032598] (-) TimerEvent: {}
+[14.074870] (morphing_drone) StdoutLine: {'line': b'Installing gazebo_drone_bridge script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.116237] (morphing_drone) StdoutLine: {'line': b'Installing morph_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.132836] (-) TimerEvent: {}
+[14.144115] (morphing_drone) StdoutLine: {'line': b'Installing rl_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.187745] (morphing_drone) StdoutLine: {'line': b'Installing run_morph_sequence script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.233011] (-) TimerEvent: {}
+[14.234833] (morphing_drone) StdoutLine: {'line': b'Installing run_obstacle_course script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.285678] (morphing_drone) StdoutLine: {'line': b'Installing teleop_controller script to /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/lib/morphing_drone\n'}
+[14.333160] (-) TimerEvent: {}
+[14.344259] (morphing_drone) StdoutLine: {'line': b'\n'}
+[14.346201] (morphing_drone) StdoutLine: {'line': b'Installed /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone\n'}
+[14.353440] (morphing_drone) StdoutLine: {'line': b'running symlink_data\n'}
+[14.369493] (morphing_drone) StdoutLine: {'line': b'creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index\n'}
+[14.375235] (morphing_drone) StdoutLine: {'line': b'creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index\n'}
+[14.383651] (morphing_drone) StdoutLine: {'line': b'creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index/packages\n'}
+[14.430646] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/resource/morphing_drone -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/ament_index/resource_index/packages\n'}
+[14.433233] (-) TimerEvent: {}
+[14.478912] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/package.xml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone\n'}
+[14.505261] (morphing_drone) StdoutLine: {'line': b'creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch\n'}
+[14.533409] (-) TimerEvent: {}
+[14.546696] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/full_simulation.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch\n'}
+[14.592003] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/obstacle_course.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch\n'}
+[14.633522] (-) TimerEvent: {}
+[14.634354] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/launch/teleop_simulation.launch.py -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/launch\n'}
+[14.679773] (morphing_drone) StdoutLine: {'line': b'creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config\n'}
+[14.720843] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/config/drone_params.yaml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config\n'}
+[14.733645] (-) TimerEvent: {}
+[14.763952] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/config/pid_gains.yaml -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/config\n'}
+[14.798714] (morphing_drone) StdoutLine: {'line': b'creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/urdf\n'}
+[14.825699] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/urdf/morphing_drone.urdf.xacro -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/urdf\n'}
+[14.833728] (-) TimerEvent: {}
+[14.846818] (morphing_drone) StdoutLine: {'line': b'creating /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds\n'}
+[14.883788] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/worlds/empty_flight.world -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds\n'}
+[14.933896] (-) TimerEvent: {}
+[14.934838] (morphing_drone) StdoutLine: {'line': b'symbolically linking /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/build/morphing_drone/worlds/morph_course.world -> /mnt/c/morphing_drone_ws (6)/morphing_drone_ws/install/morphing_drone/share/morphing_drone/worlds\n'}
+[14.981324] (morphing_drone) CommandEnded: {'returncode': 0}
+[15.034006] (-) TimerEvent: {}
+[15.134745] (-) TimerEvent: {}
+[15.235542] (-) TimerEvent: {}
+[15.336522] (-) TimerEvent: {}
+[15.437271] (-) TimerEvent: {}
+[15.538146] (-) TimerEvent: {}
+[15.638898] (-) TimerEvent: {}
+[15.739456] (-) TimerEvent: {}
+[15.840067] (-) TimerEvent: {}
+[15.941035] (-) TimerEvent: {}
+[16.040292] (morphing_drone) JobEnded: {'identifier': 'morphing_drone', 'rc': 0}
+[16.059548] (-) TimerEvent: {}
+[16.060082] (-) EventReactorShutdown: {}

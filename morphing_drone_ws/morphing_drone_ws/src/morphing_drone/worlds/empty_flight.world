@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="morphing_drone_world">
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>100</iters>
+        </solver>
+      </ode>
+    </physics>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Gazebo ROS state plugin — provides /apply_body_wrench, /get_model_list, etc. -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+      <update_rate>100.0</update_rate>
+    </plugin>
+
+    <!-- Gazebo ROS properties plugin — provides /get_link_properties etc. -->
+    <plugin name="gazebo_ros_properties" filename="libgazebo_ros_properties.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>3 -3 5 0 0.6 2.35</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+
+  </world>
+</sdf>

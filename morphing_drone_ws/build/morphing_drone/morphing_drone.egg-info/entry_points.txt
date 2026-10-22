@@ -1,0 +1,11 @@
+[console_scripts]
+analyze_flight_data = morphing_drone.analyze_flight_data:main
+data_logger = morphing_drone.data_logger:main
+flight_controller = morphing_drone.flight_controller:main
+gazebo_drone_bridge = morphing_drone.gazebo_drone_plugin:main
+morph_controller = morphing_drone.morph_controller:main
+rl_controller = morphing_drone.ml.rl_controller:main
+run_morph_sequence = morphing_drone.run_morph_sequence:main
+run_obstacle_course = morphing_drone.run_obstacle_course:main
+teleop_controller = morphing_drone.teleop_controller:main
+

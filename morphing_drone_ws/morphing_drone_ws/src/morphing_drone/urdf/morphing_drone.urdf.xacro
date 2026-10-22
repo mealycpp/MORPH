@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="morphing_drone">
+
+  <!-- ==================== PROPERTIES ==================== -->
+  <xacro:property name="PI" value="3.14159265359"/>
+  <xacro:property name="frame_size" value="0.150"/>      <!-- 150mm center plate -->
+  <xacro:property name="frame_thickness" value="0.003"/>  <!-- 3mm carbon fiber -->
+  <xacro:property name="arm_inner_len" value="0.159"/>    <!-- center to servo -->
+  <xacro:property name="arm_outer_len" value="0.159"/>    <!-- servo to EDF center -->
+  <xacro:property name="arm_width" value="0.050"/>
+  <xacro:property name="arm_thickness" value="0.003"/>
+  <xacro:property name="edf_diameter" value="0.070"/>
+  <xacro:property name="edf_height" value="0.060"/>
+  <xacro:property name="total_mass" value="2.5"/>
+  <xacro:property name="body_mass" value="1.1"/>          <!-- center + electronics -->
+  <xacro:property name="arm_inner_mass" value="0.06"/>
+  <xacro:property name="arm_outer_mass" value="0.06"/>
+  <xacro:property name="edf_mass" value="0.15"/>
+  <xacro:property name="servo_mass" value="0.08"/>
+
+  <!-- ==================== MATERIALS ==================== -->
+  <material name="carbon_fiber">
+    <color rgba="0.15 0.15 0.15 1.0"/>
+  </material>
+  <material name="silver">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.1 0.3 0.8 1.0"/>
+  </material>
+
+  <!-- ==================== BASE LINK (center plate) ==================== -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="${frame_size} ${frame_size} ${frame_thickness*4}"/>
+      </geometry>
+      <material name="carbon_fiber"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${frame_size} ${frame_size} ${frame_thickness*4}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="${body_mass}"/>
+      <inertia ixx="0.005" ixy="0" ixz="0"
+               iyy="0.005" iyz="0" izz="0.009"/>
+    </inertial>
+  </link>
+
+  <!-- ==================== ARM MACRO ==================== -->
+  <xacro:macro name="drone_arm" params="id angle_rad">
+
+    <!-- Inner arm segment (fixed to base, extends to servo point) -->
+    <link name="arm_${id}_inner">
+      <visual>
+        <origin xyz="${arm_inner_len/2} 0 0"/>
+        <geometry>
+          <box size="${arm_inner_len} ${arm_width} ${arm_thickness}"/>
+        </geometry>
+        <material name="carbon_fiber"/>
+      </visual>
+      <collision>
+        <origin xyz="${arm_inner_len/2} 0 0"/>
+        <geometry>
+          <box size="${arm_inner_len} ${arm_width} ${arm_thickness}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${arm_inner_mass}"/>
+        <origin xyz="${arm_inner_len/2} 0 0"/>
+        <inertia ixx="0.00001" ixy="0" ixz="0"
+                 iyy="0.0005" iyz="0" izz="0.0005"/>
+      </inertial>
+    </link>
+
+    <!-- Fixed joint: base_link → inner arm (at the configured heading) -->
+    <joint name="arm_${id}_base_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="arm_${id}_inner"/>
+      <origin xyz="0 0 0" rpy="0 0 ${angle_rad}"/>
+    </joint>
+
+    <!-- Servo joint: inner arm → outer arm (REVOLUTE — this is what morphs) -->
+    <link name="arm_${id}_outer">
+      <visual>
+        <origin xyz="${arm_outer_len/2} 0 0"/>
+        <geometry>
+          <box size="${arm_outer_len} ${arm_width} ${arm_thickness}"/>
+        </geometry>
+        <material name="carbon_fiber"/>
+      </visual>
+      <collision>
+        <origin xyz="${arm_outer_len/2} 0 0"/>
+        <geometry>
+          <box size="${arm_outer_len} ${arm_width} ${arm_thickness}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${arm_outer_mass + servo_mass}"/>
+        <origin xyz="${arm_outer_len/2} 0 0"/>
+        <inertia ixx="0.00002" ixy="0" ixz="0"
+                 iyy="0.0006" iyz="0" izz="0.0006"/>
+      </inertial>
+    </link>
+
+    <joint name="servo_joint_${id}" type="revolute">
+      <parent link="arm_${id}_inner"/>
+      <child link="arm_${id}_outer"/>
+      <origin xyz="${arm_inner_len} 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>       <!-- Rotation about Z (yaw plane) -->
+      <limit lower="${-PI/2}" upper="${PI/2}" effort="50.0" velocity="5.24"/>
+      <dynamics damping="5.0" friction="2.0"/>
+    </joint>
+
+    <!-- EDF unit at end of outer arm -->
+    <link name="edf_${id}">
+      <visual>
+        <geometry>
+          <cylinder radius="${edf_diameter/2}" length="${edf_height}"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${edf_diameter/2}" length="${edf_height}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${edf_mass}"/>
+        <inertia ixx="0.00005" ixy="0" ixz="0"
+                 iyy="0.00005" iyz="0" izz="0.00003"/>
+      </inertial>
+    </link>
+
+    <joint name="edf_mount_${id}" type="fixed">
+      <parent link="arm_${id}_outer"/>
+      <child link="edf_${id}"/>
+      <origin xyz="${arm_outer_len} 0 ${edf_height/2}" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+  <!-- ==================== INSTANTIATE 4 ARMS ==================== -->
+  <!-- X-config nominal headings: 45°, 135°, 225°, 315° -->
+  <xacro:drone_arm id="1" angle_rad="${PI/4}"/>        <!-- Front-Right -->
+  <xacro:drone_arm id="2" angle_rad="${3*PI/4}"/>      <!-- Front-Left  -->
+  <xacro:drone_arm id="3" angle_rad="${5*PI/4}"/>      <!-- Rear-Left   -->
+  <xacro:drone_arm id="4" angle_rad="${7*PI/4}"/>      <!-- Rear-Right  -->
+
+  <!-- ==================== GAZEBO PLUGINS ==================== -->
+
+  <!-- Ground truth odometry (model plugin) -->
+  <gazebo>
+    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+      <ros>
+        <namespace>/morphing_drone</namespace>
+        <remapping>odom:=ground_truth/odom</remapping>
+      </ros>
+      <body_name>base_link</body_name>
+      <frame_name>world</frame_name>
+      <update_rate>50.0</update_rate>
+    </plugin>
+  </gazebo>
+
+  <!-- IMU sensor (link-level — needs reference) -->
+  <gazebo reference="base_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+        <ros>
+          <namespace>/morphing_drone</namespace>
+          <remapping>~/out:=imu/data</remapping>
+        </ros>
+        <initial_orientation_as_reference>false</initial_orientation_as_reference>
+      </plugin>
+    </sensor>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <!-- Force plugin on base_link (model plugin) -->
+  <gazebo>
+    <plugin name="base_thrust" filename="libgazebo_ros_force.so">
+      <ros>
+        <namespace>/morphing_drone</namespace>
+      </ros>
+      <link_name>base_link</link_name>
+    </plugin>
+  </gazebo>
+
+  <!-- Joint state publisher (model plugin) -->
+  <gazebo>
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+        <namespace>/morphing_drone</namespace>
+        <remapping>joint_states:=joint_states</remapping>
+      </ros>
+      <joint_name>servo_joint_1</joint_name>
+      <joint_name>servo_joint_2</joint_name>
+      <joint_name>servo_joint_3</joint_name>
+      <joint_name>servo_joint_4</joint_name>
+      <update_rate>50</update_rate>
+    </plugin>
+  </gazebo>
+
+  <!-- Joint position controller (model plugin) -->
+  <gazebo>
+    <plugin name="joint_pos_controller" filename="libgazebo_ros_joint_pose_trajectory.so">
+      <ros>
+        <namespace>/morphing_drone</namespace>
+      </ros>
+      <update_rate>50</update_rate>
+    </plugin>
+  </gazebo>
+
+</robot>

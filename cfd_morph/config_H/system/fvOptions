@@ -1,0 +1,79 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvOptions;
+}
+
+disk1
+{
+    type            vectorSemiImplicitSource;
+    active          true;
+
+    vectorSemiImplicitSourceCoeffs
+    {
+        selectionMode   cellZone;
+        cellZone        disk1Zone;
+        volumeMode      specific;
+
+        sources
+        {
+            U       ((0 0 -79631.4705) 0);
+        }
+    }
+}
+
+disk2
+{
+    type            vectorSemiImplicitSource;
+    active          true;
+
+    vectorSemiImplicitSourceCoeffs
+    {
+        selectionMode   cellZone;
+        cellZone        disk2Zone;
+        volumeMode      specific;
+
+        sources
+        {
+            U       ((0 0 -79631.4705) 0);
+        }
+    }
+}
+
+disk3
+{
+    type            vectorSemiImplicitSource;
+    active          true;
+
+    vectorSemiImplicitSourceCoeffs
+    {
+        selectionMode   cellZone;
+        cellZone        disk3Zone;
+        volumeMode      specific;
+
+        sources
+        {
+            U       ((0 0 -79631.4705) 0);
+        }
+    }
+}
+
+disk4
+{
+    type            vectorSemiImplicitSource;
+    active          true;
+
+    vectorSemiImplicitSourceCoeffs
+    {
+        selectionMode   cellZone;
+        cellZone        disk4Zone;
+        volumeMode      specific;
+
+        sources
+        {
+            U       ((0 0 -79631.4705) 0);
+        }
+    }
+}

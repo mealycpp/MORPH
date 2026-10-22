@@ -1,0 +1,52 @@
+# PID Controller Gains for Morphing Drone
+# These may need tuning per configuration
+
+pid:
+  # Altitude hold
+  altitude:
+    kp: 15.0
+    ki: 2.0
+    kd: 8.0
+    max_integral: 10.0
+    output_min: 0.0
+    output_max: 71.4   # 4 * 17.86 N
+
+  # Roll control
+  roll:
+    kp: 8.0
+    ki: 0.5
+    kd: 4.0
+    max_integral: 2.0
+    output_min: -10.0
+    output_max: 10.0
+
+  # Pitch control
+  pitch:
+    kp: 8.0
+    ki: 0.5
+    kd: 4.0
+    max_integral: 2.0
+    output_min: -10.0
+    output_max: 10.0
+
+  # Yaw control
+  yaw:
+    kp: 4.0
+    ki: 0.2
+    kd: 2.0
+    max_integral: 1.0
+    output_min: -5.0
+    output_max: 5.0
+
+  # Position hold (X, Y)
+  position_x:
+    kp: 2.0
+    ki: 0.1
+    kd: 1.5
+    max_integral: 3.0
+
+  position_y:
+    kp: 2.0
+    ki: 0.1
+    kd: 1.5
+    max_integral: 3.0

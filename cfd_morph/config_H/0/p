@@ -1,0 +1,39 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    inlet
+    {
+        type            totalPressure;
+        p0              uniform 0;
+        U               U;
+        phi             phi;
+        rho             none;
+        psi             none;
+        gamma           1;
+        value           uniform 0;
+    }
+    outlet
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    walls
+    {
+        type            slip;
+    }
+    droneBody
+    {
+        type            zeroGradient;
+    }
+}
